@@ -5,6 +5,7 @@ require 'anemone'
 url = 'http://www.songlyrics.com/'
 
 Anemone.crawl(url) do |anemone|
+  anemone.storage = Anemone::Storage.Redis
   page_count = 0
   song_count = 0
   anemone.focus_crawl do |page|
