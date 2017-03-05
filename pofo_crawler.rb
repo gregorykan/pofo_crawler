@@ -16,9 +16,8 @@ Anemone.crawl(url) do |anemone|
       poem = page.doc.css('.poem').css('div')
         poem.each do |line|
           if line.text.length
-            line_with_break = line.text + "\n"
-            f = File.open("output.txt", "a+b")
-            f.write(line_with_break)
+            f = File.open("poems.txt", "a+b")
+            f.write(line.text)
           end
         end
         poem_count +=1
