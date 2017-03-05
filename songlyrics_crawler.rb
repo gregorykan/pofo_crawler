@@ -14,7 +14,6 @@ Anemone.crawl(url) do |anemone|
     if page.doc && page.doc.css('#songLyricsDiv').any?
       page.doc.css('#songLyricsDiv').css('p').each do |line|
         if line.text.length
-          puts line.text
           f = File.open("song_lyrics.txt", "a+b")
           f.write(line.text)
         end
